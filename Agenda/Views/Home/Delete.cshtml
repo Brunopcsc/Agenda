@@ -1,0 +1,136 @@
+﻿@model Agenda.Models.Contato
+
+@{
+    Layout = null;
+    ViewBag.Title = "Remover";
+}
+
+<div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Deseja remover este contato?</h4>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <dl class="row">
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Nome)
+                    </dd>
+
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Endereco)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Endereco)
+                    </dd>
+
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Numero)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Numero)
+
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Bairro)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Bairro)
+                    </dd>
+
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Cidade)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Cidade)
+                    </dd>
+
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Cep)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Cep)
+                    </dd>
+
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.TelefoneRes)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.TelefoneRes)
+                    </dd>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.TelefoneCom)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.TelefoneCom)
+                    </dd>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Celular)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Celular)
+                    </dd>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.OutroNum)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.OutroNum)
+                    </dd>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Telefone0800)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Telefone0800)
+                    </dd>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Informacoes)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Informacoes)
+                    </dd>
+
+                </dl>
+
+                <div class="modal-footer">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Deletar" class="btn btn-danger" />
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    }
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+
+        <div>
+            @Html.ActionLink("Retornar para a Lista", "Index")
+        </div>
+    </div>
+</div>

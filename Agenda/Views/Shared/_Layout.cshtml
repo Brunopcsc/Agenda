@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Agenda</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Scripts/n" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+
+</head>
+<body style="padding-top: 70px;">
+    <nav class="navbar navbar-inverse fixed-top navbar-dark bg-dark">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.ActionLink("Agenda", "Index", null, new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-nav flex-grow-1">
+                <ul class="nav nav-pills nav-fill">
+                    <li>@Html.ActionLink("Home", "Index", null, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+
+            <div class="custom-control custom-switch">
+
+                <ul class="nav nav-pills nav-fill">
+                    <li>@Html.ActionLink("Logout", "Logout", null, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+<!--
+    <footer class="border-top footer text-muted fixed-bottom">
+        <div class="container">
+            &copy; 2021 - Agenda
+        </div>
+    </footer>-->
+     <!--  Dark Mode
+    <script>
+        function myFunction() {
+            var element = document.body;
+
+            var checkbox = document.querySelector('input[type="checkbox"]');
+            if (checkbox.checked) {
+                localStorage.setItem('check', 'yes');
+                element.classList.toggle("dark-mode");
+            } else {
+                element.classList.toggle("dark-mode");
+                localStorage.setItem('check', 'no');
+            }
+        }
+    </script>
+   
+    <script>
+
+        var element = document.body;
+        document.addEventListener('DOMContentLoaded', function () {
+            var checkbox = document.querySelector('input[type="checkbox"]');
+            var botao = localStorage.getItem("check");
+            if (botao === "yes" && !checkbox.checked) {
+                checkbox.checked = true;
+                element.classList.toggle("dark-mode");
+            }
+            else if (botao === "no" && checkbox.checked) {
+                checkbox.checked = false;
+                element.classList.toggle("dark-mode");
+            }
+        });
+        -->
+
+
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

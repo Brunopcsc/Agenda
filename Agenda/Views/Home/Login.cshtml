@@ -1,0 +1,48 @@
+﻿@model Agenda.Models.usuario
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h4 class="modal-title">Login</h4>
+        </div>
+
+        <div class="modal-body">
+            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+            {
+                //cria a tag do formulário
+                @Html.AntiForgeryToken() // previne o ataque CSRF
+                                        @Html.ValidationSummary(true)
+                if (@ViewBag.Message != null)
+                {
+                    <div class="text-danger">
+                        @ViewBag.Message
+                    </div>
+                }
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.NomeUsuario, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.NomeUsuario, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NomeUsuario, "", new { @id = "contatoNome", @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Senha, "", new { @id = "contatoNome", @class = "text-danger" })
+                </div>
+
+
+                <div class="col" style="padding-top:10px;"><input type="submit" value="Login" class="btn btn-primary" /></div>
+
+            }
+        </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    @section Scripts{
+        @Scripts.Render("~/bundles/jqueryval")
+    }
